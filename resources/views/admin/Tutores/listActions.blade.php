@@ -83,12 +83,12 @@
                                         <i class="fas fa-eye"></i>
                                     </a>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-3 offset-1">
                                     <a class="cursor-active btn btn-success" href="{{route('tutores.edit', $tutor->id)}}">
                                         <i class="fas fa-pen"></i>
                                     </a>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-3 offset-1">
                                     <form action="{{route('tutores.destroy', $tutor->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')

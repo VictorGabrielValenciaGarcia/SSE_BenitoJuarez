@@ -1,7 +1,7 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Alumnos')
+@section('title', 'Tutores')
 
 {{-- @section('plugins.Sweetalert2',true) --}}
 

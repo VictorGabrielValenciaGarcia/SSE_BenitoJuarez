@@ -66,13 +66,13 @@
 
                                             <div class="col-3">
 
-                                                <a class="cursor-active btn btn-primary btn-md col-12" href="{{route('materias.show', $materia->id)}}">
+                                                <a class="cursor-active btn btn-primary btn-md" href="{{route('materias.show', $materia->id)}}">
                                                     <i class="fas fa-eye"></i>
                                                 </a>
 
                                             </div>
                                             <div class="col-3">
-                                                <a class=" cursor-active btn btn-success btn-md col-12" href="{{route('materias.edit', $materia->id)}}">
+                                                <a class=" cursor-active btn btn-success btn-md" href="{{route('materias.edit', $materia->id)}}">
                                                     <i class="fas fa-pen"></i>
                                                 </a>
                                             </div>
@@ -82,7 +82,7 @@
                                                 <form action="{{route('materias.destroy', $materia->id)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger col-12" role="button" type="submit">
+                                                    <button class="btn btn-danger" role="button" type="submit">
                                                     <i class="fas fa-trash"></i>
                                                     </button>
                                                 </form>
