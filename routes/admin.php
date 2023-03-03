@@ -24,10 +24,13 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 
 // Tutores
     Route::get('/tutores/assingments',[TutoresController::class,'assingments'])->middleware('can:admin.tutores.assingments')->name('tutores.assingments');
+
     Route::get('/tutores/assing',[TutoresController::class,'assing'])->middleware('can:admin.tutores.assing')->name('tutores.assing');
     Route::post('/tutores/assingTutor', [TutoresController::class,'assingTutor'])->name('tutores.assingTutor');
+
     Route::get('/tutores/reassing/{id}',[TutoresController::class,'reassing'])->middleware('can:admin.tutores.reassing')->name('tutores.reassing');
-    Route::post('/tutores/reassingTutor', [TutoresController::class,'reassingTutor'])->name('tutores.reassingTutor');
+    Route::patch('/tutores/reassingTutor', [TutoresController::class,'reassingTutor'])->name('tutores.reassingTutor');
+    Route::delete('/tutores/assingments/{id}', [TutoresController::class,'destroyAssig'])->middleware('can:admin.tutores.destroyAssig')->name('tutores.destroyAssig');
 
     Route::get('/tutores/list',[TutoresController::class,'index'])->middleware('can:admin.tutores.index')->name('tutores.index');
     Route::get('/tutores/actions',[TutoresController::class,'list'])->middleware('can:admin.tutores.list')->name('tutores.list');
@@ -76,3 +79,5 @@ Route::get('/',[HomeController::class,'index'])->name('home');
     // Route::get('/user/list',[UserController::class,'index'])->middleware('can:admin.docentes.index')->name('docentes.index');
     // Route::get('/user/edit/{id}', [UserController::class,'edit'])->middleware('can:admin.docentes.edit')->name('docentes.edit');
     // Route::patch('/user/update', [UserController::class,'update'])->name('docentes.update');
+
+?>

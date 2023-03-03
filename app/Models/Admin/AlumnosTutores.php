@@ -14,4 +14,15 @@ class AlumnosTutores extends Model
         'id_tutor',
         'parentesco',
     ];
+
+    public function tutor()
+    {
+        return $this->hasOne(Tutores::class, 'id', 'id_tutor');
+    }
+
+    public function alumno()
+    {
+        return $this->hasOne(Alumnos::class, 'id', 'id_alumno');
+    }
+
 }

@@ -39,7 +39,8 @@ class RolSeeder extends Seeder
         //Tutores
         Permission::create(['name' => 'admin.tutores.assingments'])->assignRole($roleA);
         Permission::create(['name' => 'admin.tutores.assing'])->assignRole($roleA);
-        Permission::create(['name' => 'admin.tutores.reassingTutor'])->assignRole($roleA);
+        Permission::create(['name' => 'admin.tutores.reassing'])->assignRole($roleA);
+        Permission::create(['name' => 'admin.tutores.destroyAssig'])->assignRole($roleA);
 
         Permission::create(['name' => 'admin.tutores.index'])->assignRole($roleA);
         Permission::create(['name' => 'admin.tutores.list'])->assignRole($roleA);

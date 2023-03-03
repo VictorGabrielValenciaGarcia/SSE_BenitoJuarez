@@ -66,25 +66,25 @@
 
                                                 <div class="row justify-content-center align-items-center g-2">
 
-                                                    <div class="col-3">
+                                                    <div class="col-4">
 
-                                                        <a class="cursor-active btn btn-primary btn-md col-12" href="{{route('alumnos.show', $alumno->id)}}">
+                                                        <a class="cursor-active btn btn-primary btn-md" href="{{route('alumnos.show', $alumno->id)}}">
                                                             <i class="fas fa-eye"></i>
                                                         </a>
 
                                                     </div>
-                                                    <div class="col-3">
-                                                        <a class=" cursor-active btn btn-success btn-md col-12" href="{{route('alumnos.edit', $alumno->id)}}">
+                                                    <div class="col-4">
+                                                        <a class=" cursor-active btn btn-success btn-md" href="{{route('alumnos.edit', $alumno->id)}}">
                                                             <i class="fas fa-pen"></i>
                                                         </a>
                                                     </div>
 
-                                                    <div class="col-3">
+                                                    <div class="col-4">
 
                                                         <form action="{{route('alumnos.destroy', $alumno->id)}}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button class="btn btn-danger col-12" role="button" type="submit">
+                                                            <button class="btn btn-danger" role="button" type="submit">
                                                             <i class="fas fa-trash"></i>
                                                             </button>
                                                         </form>
