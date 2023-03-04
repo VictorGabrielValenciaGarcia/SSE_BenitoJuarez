@@ -12,6 +12,16 @@ use App\Http\Controllers\Admin\UserController;
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 
+// Calificaciones
+    // Route::get('/calificaciones/list',[GruposController::class,'index'])->middleware('can:admin.grupos.index')->name('grupos.index');
+    Route::get('/calificaciones/actions',[CalificacionesController::class,'index'])->middleware('can:admin.calif.index')->name('calif.index');
+    Route::get('/calificaciones/create',[CalificacionesController::class,'create'])->middleware('can:admin.calif.create')->name('calif.create');
+    Route::post('/calificaciones', [CalificacionesController::class,'store'])->name('calif.store');
+    Route::get('/calificaciones/edit/{id}', [CalificacionesController::class,'edit'])->middleware('can:admin.calif.edit')->name('calif.edit');
+    Route::patch('/calificaciones/update', [CalificacionesController::class,'update'])->name('calif.update');
+    Route::get('/calificaciones/{id}', [CalificacionesController::class,'show'])->middleware('can:admin.calif.show')->name('calif.show');
+    Route::delete('/calificaciones/eliminar/{id}', [CalificacionesController::class,'destroy'])->middleware('can:admin.grupos.destroy')->name('calif.destroy');
+
 // Grupos
     Route::get('/grupos/list',[GruposController::class,'index'])->middleware('can:admin.grupos.index')->name('grupos.index');
     Route::get('/grupos/actions',[GruposController::class,'list'])->middleware('can:admin.grupos.list')->name('grupos.list');
@@ -76,8 +86,5 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 
     Route::resource('user', UserController::class)->only('index', 'edit', 'update')->names('admin.users');
 
-    // Route::get('/user/list',[UserController::class,'index'])->middleware('can:admin.docentes.index')->name('docentes.index');
-    // Route::get('/user/edit/{id}', [UserController::class,'edit'])->middleware('can:admin.docentes.edit')->name('docentes.edit');
-    // Route::patch('/user/update', [UserController::class,'update'])->name('docentes.update');
 
 ?>
