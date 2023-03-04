@@ -77,7 +77,7 @@
                                 <h4 class="mt-3 text-center"><strong>Tutores</strong></h4>
                                 <ul class="list-group list-group-numbered">
                                     @foreach ($alumno->tutores as $key =>$tutor)
-                                    <li class="list-group-item fs-3"><strong>{{ $key + 1 }}.-</strong> {{ $tutor->nombre }} {{ $tutor->apellidoP }} {{ $tutor->apellidoM }}</li>
+                                    <li class="list-group-item fs-3"><strong>{{ $key + 1 }}.-</strong> <a href="{{route('tutores.show', $tutor->id)}}">{{ $tutor->nombre }} {{ $tutor->apellidoP }} {{ $tutor->apellidoM }}</a></li>
 
                                     @endforeach
                                 </ul>

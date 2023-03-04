@@ -13,10 +13,6 @@
     <div class="container mt-5">
         <div class="row justify-content-center align-items-center g-2 pt-3">
 
-            {{-- <div class="col-6 text-center">
-                <img src="https://picsum.photos/400/400" class="img-fluid rounded" alt="">
-            </div> --}}
-
             <div class="col-6 p-3">
 
                 <div class="card">
@@ -24,18 +20,34 @@
                         <h2 class="font-weight-bold text-center">{{ $grupo -> nombre }}</h2>
                         <p class="card-text text-center">{{ $grupo -> grado }}</p>
                         <hr>
-                        <h5 class="mt-3 text-center"><strong>Cantidad de Alumnos Esperada:</strong> {{ $grupo -> numAlumnos }}</h5>
-
-                        <ul class="list-group list-group-numbered">
-                            @foreach ($alumnos as $alumno)
-                            <li class="list-group-item fs-3"><strong>{{ $loop->index+1 }}.-</strong> {{ $alumno->nombre }} {{ $alumno->apellidoP }} {{ $alumno->apellidoM }}</li>
-                            @endforeach
-                        </ul>
+                        <p class="mt-3 text-center"><strong>Cantidad de Alumnos Esperada:</strong> {{ $grupo -> numAlumnos }}</p>
 
                     </div>
                 </div>
 
+            </div>
 
+            <div class="col-6 p-3">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <h5 class="text-center"><strong>Listado de Alumnos</strong></h5>
+                        <hr>
+                        @if (count($alumnos)<=0)
+                            <ul class="list-group list-group-numbered">
+                                <li class="list-group-item fs-3 text-center"><strong>No hay alumnos registrados en este grupo</strong></li>
+                            </ul>
+                        @else
+                            <ul class="list-group list-group-numbered">
+                                @foreach ($alumnos as $alumno)
+                                <li class="list-group-item fs-3 "><strong>{{ $loop->index+1 }}.-</strong> {{ $alumno->nombre }} {{ $alumno->apellidoP }} {{ $alumno->apellidoM }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+
+                    </div>
+                </div>
 
             </div>
 

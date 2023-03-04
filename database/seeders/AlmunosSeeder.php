@@ -40,6 +40,68 @@ class AlmunosSeeder extends Seeder
         ]);
 
         Alumnos::create([
+            'matricula' => 'UTTI20000',
+            'nombre' => 'Ana Griselda',
+            'apellidoP' => 'Antonio',
+            'apellidoM' => 'Lopez',
+
+            'direccion' => 'Ninguna',
+            'CURP' => 'LOAG031020HOCLRCA1',
+            'discapacidades' => 'Ninguna',
+
+            'id_grupo' => '2',
+            'sexo' => 'M', //'H', 'M', 'NB'
+            'edad' => 19,
+
+            'fechaRegistro' => $faker->dateTimeBetween('-1 week', '+1 week'),
+            'password' => 'holamundo',
+            'correo' => 'anna.lopez@gmail.com',
+            'promedio' => 9.5,
+        ]);
+
+        Alumnos::create([
+            'matricula' => 'UTTI200001',
+            'nombre' => 'Luis Angel',
+            'apellidoP' => 'Castellanos',
+            'apellidoM' => 'Jimenez',
+
+            'direccion' => 'Ninguna',
+            'CURP' => 'JICL031020HOCLRCA1',
+            'discapacidades' => 'Ninguna',
+
+            'id_grupo' => '2',
+            'sexo' => 'H', //'H', 'M', 'NB'
+            'edad' => 21,
+
+            'fechaRegistro' => $faker->dateTimeBetween('-1 week', '+1 week'),
+            'password' => 'holamundo',
+            'correo' => 'luis.angel@gmail.com',
+            'promedio' => 9.5,
+        ]);
+
+        Alumnos::create([
+            'matricula' => 'UTTI200002',
+            'nombre' => 'Thomas',
+            'apellidoP' => 'Gonzales',
+            'apellidoM' => 'Revilla',
+
+            'direccion' => 'Ninguna',
+            'CURP' => 'GORT031020HOCLRCA1',
+            'discapacidades' => 'Ninguna',
+
+            'id_grupo' => '2',
+            'sexo' => 'H', //'H', 'M', 'NB'
+            'edad' => 26,
+
+            'fechaRegistro' => $faker->dateTimeBetween('-1 week', '+1 week'),
+            'password' => 'holamundo',
+            'correo' => 'revillacks@gmail.com',
+            'promedio' => 9.5,
+        ]);
+
+        // 
+
+        Alumnos::create([
             'matricula' => 'UTTI222024',
             'nombre' => 'Luis Angel',
             'apellidoP' => 'Mecina',

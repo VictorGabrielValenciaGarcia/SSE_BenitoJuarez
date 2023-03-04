@@ -49,7 +49,7 @@
             </div>
         </nav>
 
-        <div class="container p-5 m-5">
+        <div class="container p-3 m-3">
             <div class="row align-items-center g-2 mt-4 pt-3">
 
                 <div class="col-3 offset-1">
@@ -129,7 +129,7 @@
         </div>
     </nav>
 
-    <div class="container p-5 m-5">
+    <div class="container p-3 m-3">
         <div class="row align-items-center g-2 mt-4 pt-3">
 
             <div class="col-3 offset-1">

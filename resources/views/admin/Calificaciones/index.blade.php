@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Administradores')
+@section('title', 'Calificaciones')
 
 {{-- @section('plugins.Sweetalert2',true) --}}
 
 @section('content_header')
-    <h1 class="font-weight-bold">Perfil de { Usuario }</h1>
+    <h1 class="font-weight-bold">Calificaciones Asignadas</h1>
 @stop
 
 @section('content')
@@ -15,17 +15,6 @@
 
             <div class="col-6 text-center">
                 <img src="https://picsum.photos/400/400" class="img-fluid rounded" alt="">
-            </div>
-
-            <div class="col-6 p-3">
-
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="font-weight-bold text-center">{ Usuario }</h2>
-                        <p class="card-text text-center">{ Correo@gmail.com }</p>
-                    </div>
-                </div>
-
             </div>
 
         </div>

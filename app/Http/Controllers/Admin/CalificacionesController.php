@@ -5,7 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\Admin\Calificaciones;
+use App\Models\Admin\Materias;
+use App\Models\Admin\Alumnos;
+use App\Models\Admin\Grupos;
+
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+
 
 class CalificacionesController extends Controller
 {
@@ -14,9 +20,14 @@ class CalificacionesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $grupos = Grupos::all();
+        $materias = Materias::all();
+        $grupo = Grupos::find($request->get('id_grupo'));
+        // $materia = $request->get('id_materia');
+
+        $materia = Materias::find($request->get('id_materia'));
     }
 
     /**
@@ -24,9 +35,23 @@ class CalificacionesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
+        $grupos = Grupos::all();
+        $materias = Materias::all();
+
+        $id_grupo = $request->get('id_grupo');
+        $grupo = Grupos::find($request->get('id_grupo'));
+        // $materia = $request->get('id_materia');
+
+        $materia = Materias::find($request->get('id_materia'));
+
+        $alumnos = Alumnos:: where('id_grupo','LIKE', $id_grupo)
+                    ->orderBy('id','asc')
+                    ->paginate(25);
+
+        return view('admin.Calificaciones.create')->with(compact('grupos','materias','grupo','materia','alumnos'));
     }
 
     /**
@@ -35,9 +60,33 @@ class CalificacionesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+
+        $id_materia     = $request->id_materia;
+
+        $id_alumno      = $request->id_alumno;
+        $parcialUno     = $request->parcialUno;
+        $parcialDos     = $request->parcialDos;
+        $parcialTres    = $request->parcialTres;
+        $promedioFinal  = $request->promedioFinal;
+
+        for ($i=0; $i < count($id_alumno); $i++) {
+
+            $datasave = [
+                'id_materia'    => $id_materia,
+
+                'id_alumno'     => $id_alumno[$i],
+                'parcialUno'    => $parcialUno[$i],
+                'parcialDos'    => 0,
+                'parcialTres'   => 0,
+                'promedioFinal' => 0,
+            ];
+
+            // return dd($datasave);
+            DB::table('calificaciones')->insert($datasave);
+        }
+         return view('admin.Calificaciones.index');
+
     }
 
     /**

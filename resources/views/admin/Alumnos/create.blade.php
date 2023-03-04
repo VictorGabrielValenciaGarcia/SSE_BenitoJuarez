@@ -307,7 +307,7 @@
                                         <label class="text-dark mt-2 mb-1">Direccion / Domicilio</label>
                                         <input type="text" maxlength="50" class="form-control" value="{{ old('direccion') }}" name="direccion"  id="direccion" placeholder="">
 
-                                        @error ('matricula')
+                                        @error ('direccion')
 
                                         <small class="text-danger">{{$message}}</small>
 
