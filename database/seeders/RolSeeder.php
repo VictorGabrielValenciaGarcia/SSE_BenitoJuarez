@@ -78,7 +78,7 @@ class RolSeeder extends Seeder
         // Permission::create(['name' => 'admin.calif.list'])->syncRoles([$roleA, $roleD, $roleS]);
         Permission::create(['name' => 'admin.calif.create'])->syncRoles([$roleA, $roleD]);
         Permission::create(['name' => 'admin.calif.edit'])->syncRoles([$roleA, $roleD]);
-        Permission::create(['name' => 'admin.calif.show'])->syncRoles([$roleA, $roleD]);
+        // Permission::create(['name' => 'admin.calif.show'])->syncRoles([$roleA, $roleD]);
         Permission::create(['name' => 'admin.calif.destroy'])->syncRoles([$roleA, $roleD]);
 
         //Dropdpwns

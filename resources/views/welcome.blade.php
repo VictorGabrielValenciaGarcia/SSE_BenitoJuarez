@@ -49,8 +49,9 @@
             </div>
         </nav>
 
-        <div class="container p-3 m-3">
-            <div class="row align-items-center g-2 mt-4 pt-3">
+        <div class="container pt-4 mt-4 ps-5 ms-5">
+
+            <div class="row justify-content-center align-items-center g-2 mt-4 pt-4">
 
                 <div class="col-3 offset-1">
                     <div class="d-grid gap-2">
@@ -129,8 +130,8 @@
         </div>
     </nav>
 
-    <div class="container p-3 m-3">
-        <div class="row align-items-center g-2 mt-4 pt-3">
+    <div class="container pt-4 mt-4 ps-5 ms-5">
+        <div class="row justify-content-center align-items-center g-2 mt-4 pt-4">
 
             <div class="col-3 offset-1">
                 <div class="d-grid gap-2">

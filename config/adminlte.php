@@ -482,7 +482,7 @@ return [
                     'can'  => 'admin.calif.index',
                     'submenu' => [
                         [
-                            'text' => 'Calificaciones Registradas',
+                            'text' => 'Calificaciones por Alumno',
                             'icon' => 'fas fa-book',
                             'icon_color' => 'secondary',
                             'route'  => 'calif.index',
@@ -496,7 +496,7 @@ return [
                         //     'can'  => 'admin.calif.list',
                         // ],
                         [
-                            'text' => 'Ingresar Calificaciones',
+                            'text' => 'Registrar Boleta',
                             'icon' => 'fas fa-fw fa-clipboard',
                             'icon_color' => 'info',
                             'route'  => 'calif.create',

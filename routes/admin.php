@@ -19,7 +19,7 @@ Route::get('/',[HomeController::class,'index'])->name('home');
     Route::post('/calificaciones', [CalificacionesController::class,'store'])->name('calif.store');
     Route::get('/calificaciones/edit/{id}', [CalificacionesController::class,'edit'])->middleware('can:admin.calif.edit')->name('calif.edit');
     Route::patch('/calificaciones/update', [CalificacionesController::class,'update'])->name('calif.update');
-    Route::get('/calificaciones/{id}', [CalificacionesController::class,'show'])->middleware('can:admin.calif.show')->name('calif.show');
+    // Route::get('/calificaciones/{id}', [CalificacionesController::class,'show'])->middleware('can:admin.calif.show')->name('calif.show');
     Route::delete('/calificaciones/eliminar/{id}', [CalificacionesController::class,'destroy'])->middleware('can:admin.grupos.destroy')->name('calif.destroy');
 
 // Grupos

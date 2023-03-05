@@ -231,7 +231,7 @@ class AlumnosController extends Controller
                 'edad.numeric' => 'No es un numero',
             ]);
 
-            ALumnos::whereId($id)->update($alumno);
+            Alumnos::whereId($id)->update($alumno);
             return redirect()->route('alumnos.list');
     }
 
