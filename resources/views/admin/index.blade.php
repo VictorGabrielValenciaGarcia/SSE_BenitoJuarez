@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Administradores')
+@section('title', 'Perfil')
 
 {{-- @section('plugins.Sweetalert2',true) --}}
 
 @section('content_header')
-    <h1 class="font-weight-bold">Perfil de "{{ auth()->user()->name }}"</h1>
+    {{-- <h1 class="font-weight-bold">Perfil de "{{ auth()->user()->name }}"</h1> --}}
 @stop
 
 @section('content')

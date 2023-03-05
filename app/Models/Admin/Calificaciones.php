@@ -18,14 +18,15 @@ class Calificaciones extends Model
         'id_alumno',
     ];
 
-    public function alumno() : HasOne
-    {
-        return $this->hasOne(Alumnos::class, 'id', 'id_alumno');
-    }
 
-    public function materia() : HasOne
+    public function materia()
     {
         return $this->hasOne(Materias::class, 'id', 'id_materia');
+    }
+
+    public function alumno()
+    {
+        return $this->hasOne(Alumnos::class, 'id', 'id_alumno');
     }
 
 

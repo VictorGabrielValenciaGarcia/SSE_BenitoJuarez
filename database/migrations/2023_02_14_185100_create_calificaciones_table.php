@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('calificaciones', function (Blueprint $table) {
             $table->id();
 
-            $table->decimal('parcialUno', $precision = 2, $scale = 1)->default(0.0)->nullable();
-            $table->decimal('parcialDos', $precision = 2, $scale = 1)->default(0.0)->nullable();
-            $table->decimal('parcialTres', $precision = 2, $scale = 1)->default(0.0)->nullable();
-            $table->decimal('promedioFinal', $precision = 2, $scale = 1)->default(0.0)->nullable();
+            $table->decimal('parcialUno', $precision = 3, $scale = 1)->default(0.0)->nullable();
+            $table->decimal('parcialDos', $precision = 3, $scale = 1)->default(0.0)->nullable();
+            $table->decimal('parcialTres', $precision = 3, $scale = 1)->default(0.0)->nullable();
+            $table->decimal('promedioFinal', $precision = 3, $scale = 1)->default(0.0)->nullable();
 
             $table->foreignId('id_materia')
             ->nullable()

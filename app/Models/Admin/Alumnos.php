@@ -44,4 +44,9 @@ class Alumnos extends Model
     {
         return $this->belongsToMany(Tutores::class, 'alumnos_tutores','id_alumno','id_tutor');
     }
+
+    public function materias()
+    {
+        return $this->belongsToMany(Materias::class, 'calificaciones','id_alumno','id_materia');
+    }
 }

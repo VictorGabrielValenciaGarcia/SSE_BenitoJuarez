@@ -13,4 +13,9 @@ class Materias extends Model
         'grado',
         'nombre',
     ];
+
+    public function alumnos()
+    {
+        return $this->belongsToMany(Materias::class, 'calificaciones','id_materia','id_alumno');
+    }
 }
