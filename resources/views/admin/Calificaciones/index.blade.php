@@ -2,7 +2,7 @@
 
 @section('title', 'Calificaciones')
 
-{{-- @section('plugins.Sweetalert2',true) --}}
+@section('plugins.Sweetalert2',true)
 
 @section('content_header')
     <h1 class="font-weight-bold">Boletas de Calificaciones</h1>

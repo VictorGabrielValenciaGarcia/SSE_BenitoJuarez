@@ -38,12 +38,12 @@ class AlumnosController extends Controller
         $texto = $request->get('texto');
         // $grupo = Alumnos::find(1)->grupo ?? '';
         $alumnos = Alumnos::with('grupo')
-                    -> where('nombre','LIKE', '%'.$texto.'%')
-                    -> orWhere('apellidoP','LIKE', '%'.$texto.'%')
-                    -> orWhere('apellidoM','LIKE', '%'.$texto.'%')
-                    -> orWhere('matricula','LIKE', '%'.$texto.'%')
-                    ->orderBy('id','asc')
-                    ->paginate(6);
+        -> where('nombre','LIKE', '%'.$texto.'%')
+        -> orWhere('apellidoP','LIKE', '%'.$texto.'%')
+        -> orWhere('apellidoM','LIKE', '%'.$texto.'%')
+        -> orWhere('matricula','LIKE', '%'.$texto.'%')
+        ->orderBy('id','asc')
+        ->paginate(6);
         return view('admin.Alumnos.listActions', compact('alumnos','texto'));
     }
 
