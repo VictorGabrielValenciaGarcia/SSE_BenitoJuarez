@@ -26,7 +26,7 @@
                                 <input type="text" class="form-control" name="texto" id="" placeholder="Nombre o Matricula del Alumno " value="{{ $texto }}">
                             </div>
                             <div class="col-auto">
-                                <input class="btn btn-info" type="button" value="Buscar Alumno">
+                                <input class="btn btn-info" type="submit" value="Buscar Alumno">
                             </div>
                         </div>
                     </form>
