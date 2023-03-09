@@ -10,6 +10,11 @@
 
 @section('content')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         .cursor-active{
             cursor: pointer !important;
@@ -103,7 +108,7 @@
 
                                                 <div class="col-4">
 
-                                                    <form action="{{route('calif.destroy', $calificacion->id)}}" method="POST">
+                                                    <form action="{{route('calif.destroy', $calificacion->id)}}" method="POST" class="formeliminar">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="btn btn-danger" role="button" type="submit">
@@ -138,6 +143,46 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        @if (session('eliminar') == 'Listo')
+
+        Swal.fire(
+            '¡Eliminado!',
+            'El registro ha sido eliminado con éxito!',
+            'success'
+        )
+
+        @endif
+
+        $(".formeliminar").on("submit", function(e) {
+
+                e.preventDefault();
+
+                    Swal.fire({
+                        title: '¿Estas seguro?',
+                        text: "¡Este registro se eliminará definitivamente!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: '¡Sí, elimínalo!',
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Swal.fire(
+                            // 'Eliminado!',
+                            // 'El producto ha sido eliminado',
+                            // 'success'
+                            // )
+
+                            this.submit();
+                        }
+                    });
+            })
+
+    </script>
 
 @stop
 
